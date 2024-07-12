@@ -455,6 +455,7 @@ DimPlot(all, group.by = c("relabeled_clusters", "orig.ident"))
 all <- IntegrateLayers(object = all, method = CCAIntegration, 
                        orig.reduction = "pca",
                        new.reduction = "integrated.cca", verbose = FALSE)
+
 all <- FindNeighbors(all, reduction = "integrated.cca", dims = 1:20)
 all <- FindClusters(all)
 
