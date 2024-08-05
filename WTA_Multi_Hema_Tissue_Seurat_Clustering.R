@@ -112,7 +112,7 @@ wta_subset_withhla<-subset(pbmc_withhla,idents=c('13'),invert=TRUE)
 
 ###Remove cells that dont match appropriate VDJ for iNKT cells
 #Add VDJ Data
-vdj_table_assay = read.table("/diskmnt/Datasets/mmy_scratch/Dipersio/mmavers/Analysis_012023/data/WTA-VDJ_VDJ_perCell.csv", header = TRUE, row.names = 1, sep = ",",na.strings=c("","NA"))
+vdj_table_assay = read.table("WTA-VDJ_VDJ_perCell.csv", header = TRUE, row.names = 1, sep = ",",na.strings=c("","NA"))
 wta_subset_withhla = AddMetaData(object = wta_subset_withhla, metadata = vdj_table_assay)
 # Example of using ifelse() in mutate() to create a new column
 wta_subset_withhla@meta.data$TCR_Alpha_Gamma_V_gene_Dominant_Edited=paste0(wta_subset_withhla@meta.data$TCR_Alpha_Gamma_V_gene_Dominant)
